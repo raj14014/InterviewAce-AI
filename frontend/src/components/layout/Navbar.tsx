@@ -1,61 +1,44 @@
-import { motion } from "framer-motion";
-import { FaRobot } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Button from "../common/Button";
+import Logo from "../common/Logo";
 
 const Navbar = () => {
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-slate-950/70 border-b border-slate-800"
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="bg-blue-600 p-2 rounded-xl">
-            <FaRobot className="text-white text-xl" />
-          </div>
+        <Logo />
 
-          <div>
-            <h1 className="font-bold text-2xl text-white">
-              InterviewAce AI
-            </h1>
-          </div>
+        <div className="hidden md:flex items-center gap-8 text-slate-300">
+
+          <Link to="/">Home</Link>
+
+          <Link to="/features">Features</Link>
+
+          <Link to="/pricing">Pricing</Link>
+
+          <Link to="/about">About</Link>
+
         </div>
 
-        {/* Menu */}
-        <ul className="hidden md:flex gap-10 text-slate-300">
+        <div className="flex items-center gap-4">
 
-          <li className="hover:text-white cursor-pointer transition">
-            Features
-          </li>
+          <Link to="/login">
+            <Button variant="outline">
+              Login
+            </Button>
+          </Link>
 
-          <li className="hover:text-white cursor-pointer transition">
-            About
-          </li>
-
-          <li className="hover:text-white cursor-pointer transition">
-            Pricing
-          </li>
-
-        </ul>
-
-        {/* Buttons */}
-        <div className="flex gap-4">
-
-          <button className="text-white hover:text-blue-400 transition">
-            Login
-          </button>
-
-          <button className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-xl transition">
-            Get Started
-          </button>
+          <Link to="/register">
+            <Button>
+              Get Started
+            </Button>
+          </Link>
 
         </div>
 
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
