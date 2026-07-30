@@ -1,27 +1,33 @@
-# Python
-backend/venv/
-backend/venv311/
-__pycache__/
-*.pyc
-
 # Environment
 .env
-*.env
 
-# Node
-frontend/node_modules/
-frontend/dist/
-
-# VS Code
-.vscode/
-
-# Python cache
-*.pyo
+# Python
+__pycache__/
+*.py[cod]
 *.pyd
+
+# Virtual environments
+venv/
+venv311/
+
+# Database
+*.db
+
+# Audio
+*.wav
+*.mp3
+
+# Uploads
+uploads/
+temp/
 
 # Logs
 *.log
 
+# IDE
+.vscode/
+.idea/
+
 # OS
-.DS_Store
 Thumbs.db
+.DS_Store
